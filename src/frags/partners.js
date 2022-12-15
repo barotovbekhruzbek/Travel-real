@@ -1,0 +1,50 @@
+export default [
+    {
+        img:require('../images/sections/img2.png')
+    },
+    {
+        img:require('../images/sections/img3.png')
+    },
+    {
+        img:require('../images/sections/img4.png')
+    },
+
+    {
+        img:require('../images/sections/img5.png')
+    },
+    {
+        img:require('../images/sections/img3.png')
+    },
+    {
+        img:require('../images/sections/img2.png')
+    },
+    {
+        img:require('../images/sections/img4.png')
+    },
+    {
+        img:require('../images/sections/img5.png')
+    },
+    {
+        img:require('../images/sections/img2.png')
+    },
+    {
+        img:require('../images/sections/img3.png')
+    },
+    {
+        img:require('../images/sections/img4.png')
+    },
+
+    {
+        img:require('../images/sections/img5.png')
+    },
+    {
+        img:require('../images/sections/img3.png')
+    },
+    {
+        img:require('../images/sections/img2.png')
+    },
+    {
+        img:require('../images/sections/img4.png')
+    },
+
+]

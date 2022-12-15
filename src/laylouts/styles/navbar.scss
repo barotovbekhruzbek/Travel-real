@@ -1,0 +1,195 @@
+@import "../../styles/components/_vars.scss";
+@import "../../styles/components/_mixins.scss";
+.header{
+  padding: 66px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: transparent;
+  transition: 0.5s;
+
+  //meaia
+  @include lg{
+    padding: 30px 0;
+    position: fixed;
+  }
+
+  &.active{
+    padding: 20px;
+    background: rgba($white, $alpha: 0.8);
+    position: fixed;
+
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+
+
+    .logo{
+      font-size: 30px;
+      font-weight: 600;
+      a {
+        color: white;
+      }
+    }
+
+    .menu{
+      display: flex;
+
+
+      li{
+        a {
+          color: white;
+        }
+        .link{
+          margin-left: 62px;
+          font-size: 20px;
+
+          //Media
+          @include xl {
+            font-size: 16px;
+            margin-left: 30px;
+          }
+
+          &:hover{
+            opacity: 0.7;
+          }
+        }
+      }
+
+    }
+    .mobile-menu{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      min-height: 100vh;
+      background: white;
+      padding: 30px 10px 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+
+      &.active{
+        transform: translateX(0);
+      }
+      ul{
+        li{
+          a {
+            color: $dark;
+          }
+        .link{
+          padding: 20px 0;
+        }
+        }
+      }
+      .mobile-search{
+        width: 100%;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        border: 1px solid $brand_color;
+        font-size: 18px;
+        color: $brand_color;
+        border-radius:50px;
+
+      }
+    }
+  .burger{
+
+    margin-left: auto;
+
+
+
+
+  }
+    .actions{
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+
+      //media
+
+      @include lg{
+        margin-left: 15px;
+
+      }
+
+
+
+      .language{
+        margin-left: 33px;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+
+        //media
+        @include xl{
+          font-size: 16px;
+
+        }
+
+        i{
+         position: relative;
+          font-size: 15px;
+          left: 10px;
+          transition: 0.3s;
+        }
+
+
+
+        .dropdown{
+          position: absolute;
+          width: 150%;
+          background-color: $white;
+          top: 24px;
+          text-align: center;
+          left: 40%;
+          transform: translateX(-50%) translateY(15px);
+          box-shadow: 0 0 10px rgba($black,$alpha:0.2 );
+          opacity: 0;
+          pointer-events: none;
+          transition: transform 0.3s;
+
+          &.active{
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+          }
+
+          li{
+            padding: 10px 5px;
+
+            &:hover{
+              background: $brand_color;
+              color: $white;
+            }
+          }
+        }
+      }
+      .contact-btn {
+        padding-left: 20px;
+        button {
+        padding: 8px 20px;
+          background: #EFA543;
+          color: white;
+          border-radius: 8px;
+          border: 0;
+          font-size: 18px;
+        }
+      }
+
+    }
+  }
+
+  }

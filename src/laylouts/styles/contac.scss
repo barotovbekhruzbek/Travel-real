@@ -1,0 +1,140 @@
+@import "../../styles/components/_mixins.scss";
+@import "../../styles/components/_vars.scss";
+
+.contact-form{
+  width: 100%;
+ padding: 50px 100px;
+  background-color: $brand_color;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+
+  //media
+
+  @include xl{
+   flex-wrap: wrap;
+  }
+
+  @include md{
+    padding: 30px;
+  }
+  .content{
+    max-width:435px;
+    color: $white;
+
+    //Media
+
+    @include xl{
+      width: 100%;
+    }
+    h3{
+      font-size: 25px;
+      margin-bottom: 8px;
+
+    //  Media
+      @include lg{
+        font-size: 18px;
+      }
+
+    }
+
+    h2{
+      font-size: 49px;
+    //  Media
+      @include lg{
+        font-size: 26px;
+      }
+    }
+
+    p{
+      font-size: 14px;
+      font-family: 'Circle';
+      font-weight: 400;
+      margin: 8px 0 25px;
+      line-height: 21px;
+    }
+    .social{
+      display: flex;
+      gap: 45px;
+      align-items: center;
+        //Media
+
+      @include md{
+        justify-content: center;
+        gap: 30px;
+      }
+
+        li{
+
+          a{
+            font-size: 30px;
+            color: $white;
+            @include lg{
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+
+  .form{
+    width: 100%;
+    max-width: 800px;
+
+    //media
+    @include xl{
+      max-width: 100%;
+    }
+
+    .input{
+      width: 100%;
+      background: $white;
+      border: 0;
+      padding:15px 25px;
+      margin-bottom: 25px;
+      color: $black;
+      font-family: 'Circle', sans-serif;
+      border-radius: 10px;
+@include lg{
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+      &::placeholder{
+        font-family: 'Circle',sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+         color: $black;
+        opacity: 0.3;
+
+        @include lg{
+          font-size: 18px;
+        }
+      }
+
+    }
+    textarea.input{
+      margin-bottom: 0;
+      //Media
+      @include md{
+        min-height: 250px;
+      }
+
+    }
+    .form-btn{
+      width: 100%;
+      background: $white;
+      padding: 0 25px 15px;
+      text-align: right;
+      border-radius: 0 0 10px 10px;
+      transform: translateY(-10px);
+    //  Media
+      @include md{
+        text-align: center;
+      }
+    }
+  }
+  }
