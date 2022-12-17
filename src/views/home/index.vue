@@ -15,10 +15,10 @@ import HomePartners from "@/views/home/sections/HomePartners";
 import Choose_us from "@/views/home/sections/choose_us";
 import Products from "@/views/home/sections/products";
 import Customers from "@/views/home/sections/customers";
-import Last_News from "@/views/home/sections/Last_News";
+
 export default {
   name: "index",
-  components: {Last_News, Customers, Products, Choose_us, HomePartners, Main},
+  components: { Customers, Products, Choose_us, HomePartners, Main},
 }
 </script>
 

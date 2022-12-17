@@ -8,12 +8,14 @@
     transform: translateY(2px);
   }
 }
-
+a {
+  color: white;
+}
 
 .footor-content{
   background: $dark;
   padding: 80px 0;
-  color: $white;
+  color: white;
 
   .container{
     display: flex;
@@ -87,7 +89,7 @@
         gap: 30px;
        li{
          a{
-           color: $white;
+           color: white;
            font-size: 25px;
          }
        }
