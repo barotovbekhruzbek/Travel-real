@@ -16,7 +16,5 @@ export default {
 .about-section{
   min-height: 100vh;
   padding-top: 120px;
-
-
 }
 </style>

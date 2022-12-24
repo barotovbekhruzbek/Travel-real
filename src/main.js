@@ -10,10 +10,6 @@ import Paginate from 'vuejs-paginate'
 
 
 
-
-
-
-
 Vue.config.productionTip = false
 
 new Vue({

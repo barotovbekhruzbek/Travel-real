@@ -12,10 +12,7 @@
       <input type="text" placeholder="Qayerdan">
       <input type="text" placeholder="Qayerga">
       <input type="date" placeholder="Sana">
-
-      <router-link to="about" >
-        <button> <i class="fas fa-search"></i> Qidirish </button>
-      </router-link>
+      <button> <i class="fas fa-search"></i> Qidirish </button>
     </form>
   </div>
 

@@ -116,13 +116,11 @@
       padding: 18px 50px;
       background: #EFA543;
       border-radius: 12px;
-      color: white !important;
+      color: white;
       font-size: 18px;
       @include xxl{
         margin-top: 15px;
       }
-
-
     }
   }
 }
