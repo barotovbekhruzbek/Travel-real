@@ -1,147 +1,143 @@
 <template>
-  <div class="about-section">
-    <the-title :sub="sub" :title="title" />
+  <div class="container">
+    <div class="search-panel">
+      <h3> Biletni izlash </h3>
+      <input type="text" v-model="search" placeholder="izlash ..." />
 
-    <div class="wrapper">
-      <div class="container">
-        <div class="blok ">
+    </div>
 
-          <router-link to="#">
-            <button class="active">
+  <div class="wrapper" v-for="user in filteredAndSorted" :key="user.id">
+    <div class="box">
 
-
-              <h1>History of the company</h1>
-              <p>When, while lovely valley teems with vapour around meand </p>
-            </button>
-          </router-link>
-
-        </div>
-        <div class="blok">
-
-          <router-link to="team">
-            <button>
-
-
-              <h1>Our team</h1>
-              <p>When, while lovely valley teems with vapour around meand </p>
-            </button>
-          </router-link>
-
-        </div>
-        <div class="blok">
-
-          <router-link to="mission">
-            <button>
-
-
-              <h1>Our goal and mission</h1>
-              <p>When, while lovely valley teems with vapour around meand </p>
-            </button>
-          </router-link>
-
-        </div>
+      <div>
+        <img src="../../../images/home/air.svg" alt="">
       </div>
+      
+    <div>
+      <p>{{ user.name }} <i class="fas fa-right-long"></i> {{ user.qayerga }}  </p>
     </div>
 
+      <div>
+        <h5>uchish vaqti</h5>
+        <p>24.12.2022</p>
+        <p>23:15</p>
+      </div>
 
-    <div class="list">
-      <AboutTitle/>
+      <div>
+        <h3>Narxi </h3>
+        <p>  {{ user.narxi }}  so`m</p>
+      </div>
+
+      <div>
+        <button>Buyurtma berish</button>
+      </div>
+
     </div>
+  </div>
 
   </div>
 </template>
 
 <script>
-import aboutBtn from "@/frags/about-btn.js";
-import TheTitle from "@/laylouts/The-title";
-import AboutTitle from "@/views/about/component/About-title";
 export default {
-  name: "About-Card",
-  components: {AboutTitle, TheTitle},
+  //...
   data() {
     return {
-      activeBtn:0,
-      sub:'Main Menu / About Us',
-      title:'About us',
-      aboutBtn:aboutBtn
-    }
-  }
-}
+      search: "",
+      userList: [
+        {
+          id: 1,
+          name: "Buxoro",
+          qayerga: 'Toshkent',
+          data:'24.12.2022',
+          time: '22:30',
+          narxi: '1 500 000'
+        },
+        {
+          id: 1,
+          name: "Nukus",
+          qayerga: 'Buxoro',
+          data:'24.12.2022',
+          time: '22:30',
+          narxi: '1 500 000'
+        },
+        {
+          id: 1,
+          name: "Toshkent",
+          qayerga: 'Farg`ona',
+          data:'24.12.2022',
+          time: '22:30',
+          narxi: '1 500 000'
+
+        },
+      ],
+    };
+  },
+  computed: {
+    filteredAndSorted() {
+      const compare = (a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      };
+
+      return this.userList
+          .filter((user) => {
+            return user.name.toLowerCase().includes(this.search.toLowerCase());
+          })
+          .sort(compare);
+    },
+  },
+  //...
+};
 </script>
 
-<style scoped lang="scss">
-@import "../../../styles/components/_vars.scss";
-@import "../../../styles/components/_mixins.scss";
-.about-section{
+<style lang="scss" scoped>
+.container {
   padding-top: 200px;
 }
-.container{
-  padding-top: 54px;
-  display: flex;
-  flex-wrap: wrap;
+.wrapper {
+ margin: 20px auto;
+  border-radius: 10px;
+  max-width: 1000px;
+  height: 130px;
+  background-color: white;
+  padding: 20px;
 
-  gap: 40px;
+  .box {
 
-  .blok{
-    @include xl{
-      margin-bottom: 30px;
-    }
-  }
-
-
-
-  @include xl{
-    margin-bottom: 20px;
-    //flex-wrap: wrap;
-    justify-content: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 60px;
-  }
 
-  button{
-    padding: 10px 30px;
-    color: black;
-    width: 520px;
-    height: 260px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    @include xl{
-      width: 400px;
-      height: 250px;
-    }
-
-    @include sm{
-      width: 350px;
-    }
-
-    &.active{
-      background-color: $brand_color;
-     color: $white;
-    }
-    h1{
-      font-size: 25px;
-      @include xl{
-        padding-top: 20px;
-      }
-    }
-    p{
-      padding-top: 30px;
-      font-size: 18px;
-      width: 437px;
-      @include xl{
-        padding-top: 15px;
-        width: 300px;
-      }
-      @include sm{
-        margin-left: 25px;
-        width: 200px;
+    div {
+      button {
+        padding: 8px 20px;
+        background-color: #EFA543;
+        border-radius: 8px;
+        color: white;
       }
     }
   }
+
 }
 
-.list{
-  padding-top: 50px;
-}
+.search-panel {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 40px;
 
+  h3 {
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 40px;
+  }
+  input {
+   width: 400px;
+    height: 30px;
+    margin-left: 600px;
+
+  }
+}
 </style>
