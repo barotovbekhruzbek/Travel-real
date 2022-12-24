@@ -48,9 +48,9 @@
           ></i>
 
           <ul class="dropdown" :class="{ active: is_dropdawn_open }" >
-            <li @click="uzbb"> <router-link to="catalog">UZB</router-link> </li>
+            <li @click="uzbb"> UZB </li>
             <li @click="russ">RUS</li>
-            <li @click="engg">ENG</li>
+            <li @click="engg"><router-link to="catalog">ENG</router-link></li>
           </ul>
         </div>
 
