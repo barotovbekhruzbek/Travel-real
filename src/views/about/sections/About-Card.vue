@@ -2,7 +2,9 @@
   <div class="container">
     <div class="search-panel">
       <h3> Biletni izlash </h3>
-      <input type="text" v-model="search" placeholder="izlash ..." />
+      <div class="bar">
+        <input type="text" v-model="search" placeholder="izlash ..." />
+      </div>
 
     </div>
 
@@ -93,6 +95,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../styles/components/_vars.scss";
+@import "../../../styles/components/_mixins.scss";
+
 .container {
   padding-top: 200px;
 }
@@ -104,6 +109,10 @@ export default {
   background-color: white;
   padding: 20px;
 
+  @include md {
+    height: auto;
+  }
+
   .box {
 
     padding: 20px;
@@ -111,12 +120,29 @@ export default {
     justify-content: space-between;
     align-items: center;
 
+    div img {
+      margin-bottom: 20px;
+    }
+    div p {
+      padding-top: 10px;
+    }
+
+    @include md  {
+      flex-direction: column;
+    }
+
+    
+
     div {
       button {
         padding: 8px 20px;
         background-color: #EFA543;
         border-radius: 8px;
         color: white;
+
+        @include md {
+          margin-top: 20px;
+        }
       }
     }
   }
@@ -136,8 +162,15 @@ export default {
   input {
    width: 400px;
     height: 30px;
-    margin-left: 600px;
+   
+    
 
   }
+}
+
+
+.bar {
+  display: flex;
+  justify-content: center;
 }
 </style>
