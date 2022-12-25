@@ -16,5 +16,9 @@ export default {
 .about-section{
   min-height: 100vh;
   padding-top: 120px;
+  background: url("../../images/home/bg-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 </style>
